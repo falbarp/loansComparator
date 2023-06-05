@@ -9,6 +9,7 @@ import { Model, isValidObjectId } from 'mongoose';
 import { Loan } from './entities/loan.entity';
 import { CreateLoanDto } from './dto/create-loan.dto';
 import { UpdateLoanDto } from './dto/update-loan.dto';
+import { PaginationDto } from 'src/common/dto/pagination.dto';
 
 @Injectable()
 export class LoanService {
@@ -22,8 +23,9 @@ export class LoanService {
     return loan;
   }
 
-  async findAll() {
-    return await this.loanModel.find();
+  async findAll(paginationDto: PaginationDto) {
+    const { limit = 10, offset = 0 } = paginationDto;
+    return await this.loanModel.find().limit(limit).skip(offset).select('-__v');
   }
 
   async findOne(id: string) {

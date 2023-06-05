@@ -6,10 +6,12 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { LoanService } from './loan.service';
 import { CreateLoanDto } from './dto/create-loan.dto';
 import { UpdateLoanDto } from './dto/update-loan.dto';
+import { PaginationDto } from 'src/common/dto/pagination.dto';
 
 @Controller('loans')
 export class LoanController {
@@ -21,8 +23,8 @@ export class LoanController {
   }
 
   @Get()
-  findAll() {
-    return this.loansService.findAll();
+  findAll(@Query() paginationDto: PaginationDto) {
+    return this.loansService.findAll(paginationDto);
   }
 
   @Get(':id')
