@@ -38,10 +38,6 @@ export class Loan extends Document {
     })
     months: number;
     
-    @Prop({
-        index: true,
-    })
-    type: string;
 }
 
 export const LoanSchema = SchemaFactory.createForClass(Loan);

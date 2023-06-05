@@ -29,7 +29,4 @@ export class CreateLoanDto {
     @Min(1)
     months: number;
 
-    @IsString()
-    type: string;
-
 }
