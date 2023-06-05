@@ -32,6 +32,11 @@
 $ yarn install
 ```
 
+Up Database
+```bash
+$ docker-compose up -d
+```
+
 ## Running the app
 
 ```bash
@@ -71,3 +76,8 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+## Stack
+- NestJS
+- MongoDB
