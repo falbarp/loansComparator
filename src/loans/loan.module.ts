@@ -15,5 +15,6 @@ import { Loan, LoanSchema } from './entities/loan.entity';
       },
     ]),
   ],
+  exports: [MongooseModule],
 })
 export class LoanModule {}
