@@ -24,7 +24,7 @@ export class LoanService {
   }
 
   async findAll(paginationDto: PaginationDto) {
-    const { limit = 10, offset = 0 } = paginationDto;
+    const { limit = 50, offset = 0 } = paginationDto;
     return await this.loanModel.find().limit(limit).skip(offset).select('-__v');
   }
 
